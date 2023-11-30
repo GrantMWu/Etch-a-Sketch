@@ -1,0 +1,17 @@
+#sketch-container {
+    height: 640px;
+    width: 640px;
+    border: solid black;
+    display: flex;
+    flex-direction: column
+}
+
+.row {
+    flex: 1;
+    display:flex;
+}
+
+.grid-block {
+    flex: 1;
+}
+
