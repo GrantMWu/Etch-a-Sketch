@@ -18,19 +18,26 @@ function createGrid(num) {
     let grids = document.querySelectorAll('.grid-block');
     
     grids.forEach(function(grid) {
-        grid.addEventListener('mousedown', () => grid.style.backgroundColor = 'gray')
+        grid.addEventListener('mouseover', () => grid.style.backgroundColor = 'gray')
     });
 }
 
-function changeGrid () {
+function changeGrid() {
     let num = 0;
     while(true) {
         num = prompt('Enter a number between 2 and 100 to change to a nxn grid');
         if (num < 2 || num > 100) {
           alert('Invalid entry');
         } else {
-            createGrid(num)
+            clearGrid();
+            createGrid(num);
             break;
         }
+    }
+}
+
+function clearGrid() {
+    while(sketchContainer.firstChild) {
+        sketchContainer.removeChild(sketchContainer.firstChild);
     }
 }
