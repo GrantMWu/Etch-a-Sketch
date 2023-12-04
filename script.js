@@ -16,10 +16,23 @@ function createGrid(num) {
         }
     }
     let grids = document.querySelectorAll('.grid-block');
+
+    console.log(typeof(grids));
     
-    grids.forEach(function(grid) {
-        grid.addEventListener('mouseover', () => grid.style.backgroundColor = 'gray')
+    grids.forEach(equip);
+}
+
+function equip(element) {
+    element.addEventListener('mousedown', color);
+    element.addEventListener('mouseover', event => {
+        if (event.buttons == 1) {
+            color(event);
+        }
     });
+}
+
+function color(event) {
+    event.target.style.backgroundColor = 'gray';
 }
 
 function changeGrid() {
